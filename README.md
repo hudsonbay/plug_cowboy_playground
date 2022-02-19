@@ -1,21 +1,25 @@
 # PlugCowboyPlayground
 
-**TODO: Add description**
+Simple project implementing a HTTP serverusing the PlugCowboy Elixir library. Cowboy is a simple HTTP server for Erlang and Plug will provide us with a connection adapter for that web server.
+
+It aims to provide a playground to try new things with plugs.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `plug_cowboy_playground` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:plug_cowboy_playground, "~> 0.1.0"}
-  ]
-end
+```sh
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/plug_cowboy_playground>.
+## How to interact with this project
 
+Start the server with:
+
+```sh
+mix run --no-halt
+```
+
+Once everything is finished compiling, and `[info] Starting application...` appears, open a web browser to <http://127.0.0.1:8080>. It should display:
+
+```
+Hello World!
+```
