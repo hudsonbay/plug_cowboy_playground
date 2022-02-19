@@ -9,7 +9,8 @@ defmodule PlugCowboyPlayground.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      {Plug.Cowboy, scheme: :http, plug: PlugCowboyPlayground.Router, options: [port: 8080]}
+      {Plug.Cowboy,
+       scheme: :http, plug: PlugCowboyPlayground.Router, options: [port: cowboy_port()]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -20,4 +21,6 @@ defmodule PlugCowboyPlayground.Application do
 
     Supervisor.start_link(children, opts)
   end
+
+  defp cowboy_port, do: Application.get_env(:plug_cowboy_playground, :cowboy_port, 8080)
 end
