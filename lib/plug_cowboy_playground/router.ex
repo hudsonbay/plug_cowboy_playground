@@ -6,6 +6,7 @@ defmodule PlugCowboyPlayground.Router do
 
   plug(Plug.Parsers, parsers: [:urlencoded, :multipart])
   plug(VerifyRequest, fields: ["content", "mimetype"], paths: ["/upload"])
+  plug(Plug.Logger)
   plug(:match)
   plug(:dispatch)
 
